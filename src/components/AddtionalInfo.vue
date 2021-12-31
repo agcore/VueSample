@@ -2,7 +2,7 @@
   
     <v-card
     outlined
-    min-width="50%">
+    min-width="49.5%">
     <v-card-subtitle>
         <h2>Additional Information</h2>
     </v-card-subtitle>
