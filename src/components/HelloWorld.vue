@@ -20,7 +20,7 @@
     name: 'HelloWorld',
 
     data: () => ({
-        textsample:"",
+        textsample:"", 
         counter: 1
     }),
   }
