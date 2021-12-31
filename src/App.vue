@@ -5,14 +5,13 @@
       color="primary"
       dark
     >
-
-
     </v-app-bar>
 
     <v-main>
       <HelloWorld/>
     </v-main>
   </v-app>
+  
 </template>
 
 <script>
@@ -26,7 +25,7 @@ export default {
   },
 
   data: () => ({
-    //
+    drawer:true
   }),
 };
 </script>
