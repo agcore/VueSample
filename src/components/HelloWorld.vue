@@ -10,7 +10,7 @@
           <v-card 
           >          
             <v-card-title>
-              Customer Details<v-spacer></v-spacer> <v-btn flat  @click.stop="drawer = !drawer">Edit</v-btn>
+              Customer Details<v-spacer></v-spacer> <v-btn   @click.stop="drawer = !drawer">Edit</v-btn>
             </v-card-title>
             
             <v-card-text>
@@ -22,6 +22,7 @@
             </v-card-text>  
           </v-card>
         </v-col>
+        <template v-if="features.Notes">
         <v-col
         cols="4">
                             <v-card 
@@ -31,7 +32,7 @@
             </v-card-title>
             
             <v-card-text>
-               <v-btn block @click.stop="notedrawer = !notedrawer">Add new note</v-btn>
+               <v-btn block @click.stop="notedrawer = !notedrawer" :disabled="disable.Notes">Add new note</v-btn>
               <v-row v-for="(item,index) in notes" :key="index" style="padding:1%">
                 <v-container>
                   <v-card
@@ -58,6 +59,11 @@
             </v-card-text>  
           </v-card>
         </v-col>
+        </template>
+        </v-row>
+        <v-row>
+          <v-btn @click="features.Notes = !features.Notes"> Toggle Note Feature</v-btn>
+          <v-btn @click="disable.Notes = !disable.Notes"> Toggle Note Feature View Only</v-btn>
         </v-row>
         <NoteDrawer v-model="notedrawer" 
         @savenoteinfo="savenote"
@@ -113,7 +119,14 @@ import NoteDrawer from './NoteDrawer.vue'
           Address: "1500 Allstate Pkwy, Markham, ON L3R 5B4",
           Language: "English"
         },
-        notes: []
+        notes: [],
+        features: {
+          Notes:true,
+          ContactInformation:true
+        },
+        disable:{
+          Notes:true
+        }
     }),
   }
 </script>
