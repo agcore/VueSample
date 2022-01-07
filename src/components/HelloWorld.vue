@@ -115,7 +115,7 @@ import NoteDrawer from './NoteDrawer.vue'
         notedrawer: false,
         contactInformation : 
         {
-          Email: "faisal.test@email.com",
+          Email: "faisal.test2@email.com",
           Address: "1500 Allstate Pkwy, Markham, ON L3R 5B4",
           Language: "English"
         },
